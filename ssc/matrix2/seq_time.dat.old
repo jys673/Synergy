@@ -1,0 +1,57 @@
+
+ (charming.cis.temple.edu) Elapsed time = 0.141601 seconds. n: (100)
+ MFLOPS: (7.062097) 
+
+ (charming.cis.temple.edu) Elapsed time = 0.142578 seconds. n: (100)
+ MFLOPS: (7.013705) 
+
+ (charming.cis.temple.edu) Elapsed time = 1.752930 seconds. n: (200)
+ MFLOPS: (4.563787) 
+
+ (charming.cis.temple.edu) Elapsed time = 8.407226 seconds. n: (300)
+ MFLOPS: (3.211523) 
+
+ (charming.cis.temple.edu) Elapsed time = 8.292969 seconds. n: (300)
+ MFLOPS: (3.255770) 
+
+ (charming.cis.temple.edu) Elapsed time = 20.458008 seconds. n: (400)
+ MFLOPS: (3.128359) 
+
+ (charming.cis.temple.edu) Elapsed time = 42.079101 seconds. n: (500)
+ MFLOPS: (2.970596) 
+
+ (charming.cis.temple.edu) Elapsed time = 76.890625 seconds. n: (600)
+ MFLOPS: (2.809185) 
+
+ (charming.cis.temple.edu) Elapsed time = 134.042969 seconds. n: (700)
+ MFLOPS: (2.558881) 
+
+ (charming.cis.temple.edu) Elapsed time = 200.030274 seconds. n: (800)
+ MFLOPS: (2.559613) 
+
+ (charming.cis.temple.edu) Elapsed time = 280.077149 seconds. n: (900)
+ MFLOPS: (2.602854) 
+
+ (charming.cis.temple.edu) Elapsed time = 407.511718 seconds. n: (1000)
+ MFLOPS: (2.453917) 
+
+ (snowhite.cis.temple.edu) Elapsed time = 17.216797 seconds. n: (400)
+ MSPS: (3.717300) 
+
+ (snowhite.cis.temple.edu) Elapsed time = 0.017579 seconds. n: (50)
+ MSPS: (7.110757) 
+
+ (snowhite.cis.temple.edu) Elapsed time = 0.018555 seconds. n: (50)
+ MSPS: (6.736729) 
+
+ (snowhite.cis.temple.edu) Elapsed time = 0.024415 seconds. n: (50)
+ MSPS: (5.119803) 
+
+ (snowhite.cis.temple.edu) Elapsed time = 0.011719 seconds. n: (50)
+ MSPS: (10.666439) 
+
+ (snowhite.cis.temple.edu) Elapsed time = 0.012695 seconds. n: (50)
+ MSPS: (9.846396) 
+
+ (snowhite.cis.temple.edu) Elapsed time = 0.011718 seconds. n: (50)
+ MSPS: (10.667349) 

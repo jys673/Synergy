@@ -1,0 +1,73 @@
+       Automatic Load Balancing for Parallel Matrix Multiplication
+
+			Wenhai Jiang & Yuan Shi
+			    October 1994
+
+INTRODUCTION
+
+There are many load balancing algorithms existing today: fixed chunking, 
+self-guided scheduling, factoring, etc. 
+
+Fixed chunking divides the amount of work into equal sized
+pieces. The optimal size G = total_work / sum(Ii), where Ii is the normalized 
+processor power index[1]. The optimal grain size can deliver near zero waiting 
+time. However, calculating the processor power indicies is labor intensive.
+
+Guided self-scheduling successively divides the remaining work into 1/P chunks. 
+It puts too much work at front. In a heterogeneous computing environment, we do
+not want to control which worker processor to fetch which working tuple (a fault
+tolerant computing prerequisite), it is possible that a computing intense piece 
+gets "stuck" with a slow processor. The entire application then has to wait 
+this processor to complete.
+
+Factoring uses a parameter 0<=f<=1 to generate waves of working assignments. 
+Each wave contains P chunks of size R*f/P. According to load situations, 
+adjusting f can often maintain a good load balancing effect. However, when load 
+changes frequently, the statically calculated chunk sizes often back-fire.
+ 
+Through experiments, we found that fixed chunking consistently showed 
+performance advantage in clustered computing environments where processor loads 
+change frequently. 
+
+This matrix multiplier that calculates C = A*B can automatically balance the 
+loads of hetergeneous processors. 
+
+This example illustrates a simple load balancing process: a) calibrate load
+indicies; and b) distribute work by the optimal principle [1].
+
+In particular, the master uses k rows to calibrate the worker processor loads, 
+where k is a parameter specified in "matrix.csl". For slow machines, 
+multiplying one row (with a colume) would take some measurable elapsed time 
+(NOT CPUTIME!). For faster machines, however, more rows are needed to generate 
+non-zero times. Parameter k permits the programs to run on processor clusters 
+of wide speed differences.
+
+Once the elapsed times are returned from respective worker processors, the 
+master calculates the normalized power indicies. A summation (sum) of the 
+indicies is also obtained. According to [1], the optimal grain size 
+
+	G = N / sum 
+
+is used to partition the rows in A. 
+
+Experiments showed consistent speedups by simply adding processors.
+
+FILES
+
+This example is transplanted from directory ../matrix. We have the following 
+files:
+
+a) matrix.h 	-- defines the size of matrix and tuple data structures
+b) mtclnt.c	-- the matrix multiplier mater code
+c) mtwrk.c	-- the matrix multiplier worker code
+d) matrix.csl	-- the parallel software configuration file. 
+			The "factor = 1" clause defines the number of rows used 
+			for time calibration. Normally 1 is good enough. For 
+			very fast machines, larger than 1 may be needed.
+e) ~/albm.time	-- timing output. Please do study that file for parallel runs
+			using different number of processors.
+
+TRICK
+
+To check the correctness of the multiplier, specify N = 10. The C matrix 
+should be printed in ~/albm.time. 

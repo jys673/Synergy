@@ -1,0 +1,3 @@
+cp frclnt.c.chunk frclnt.c
+cp fractal.csl.auto fractal.csl
+echo "+++ Automated fixed chunking. Use Threshold to define tester size."

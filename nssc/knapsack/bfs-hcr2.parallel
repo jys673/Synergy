@@ -1,0 +1,10 @@
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 57.930000, Processors 2, #Operations 1.65834e+07,	       MFLOPS 0.286266 CONS 2
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 46.948000, Processors 3, #Operations 1.65581e+07,	       MFLOPS 0.35269 CONS 2
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 26.991000, Processors 4, #Operations 1.65581e+07,	       MFLOPS 0.613466 CONS 2
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 21.860000, Processors 5, #Operations 1.58675e+07,	       MFLOPS 0.72587 CONS 2
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 13.155000, Processors 6, #Operations 1.58675e+07,	       MFLOPS 1.2062 CONS 2
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 9.376000, Processors 7, #Operations 1.58675e+07,	       MFLOPS 1.69236 CONS 2
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 10.363000, Processors 8, #Operations 1.58675e+07,	       MFLOPS 1.53117 CONS 2
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 8.792000, Processors 9, #Operations 1.63762e+07,	       MFLOPS 1.86262 CONS 2
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 7.292000, Processors 10, #Operations 1.63762e+07,	       MFLOPS 2.24577 CONS 2
+#Elements = 22, Capacity 549, Elapsed Time(in seconds) 6.015000, Processors 11, #Operations 1.63762e+07,	       MFLOPS 2.72255 CONS 2

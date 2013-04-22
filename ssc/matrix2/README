@@ -1,0 +1,41 @@
+		    Parallel Matrix Multiplication
+
+		    Authors: Feijian Sun (xdr)
+	     Yuan Shi (optimization + scheduling codes) 
+
+		       (c) Temple University
+		           September 1994
+
+1. INTRODUCTION
+
+Matrix multiplication is a frequently used routine in science and engineering
+applications. This example illustrates the speedup limits using different
+load balancing algorithms and the efficiency losses when using XDR.
+
+2. HOW TO MAKE BINARIES
+
+a) Sequential matrix multiplication program. (make matrix)
+b) A parallel matrix multiplication program without using XDR. (make nxdr)
+
+For non-XDR experiments, there are two pre-programmed load balancing
+scheduling methods. Please run the following scripts BEFORE "make". 
+
+a) %fchunking /* Gives fixed chunking scheduling */
+b) %factoring /* Give factoring scheduling */
+
+Simply enter "make" will create the non-xdr version.
+
+3. HOW TO CHANGE SCHEDULING PARAMETERS
+
+For both scheduling methods, the "factor =" clause in "matrix.csl" specifies
+the chunk size (for fixed chunking) and the factor (1-100% for factoring).
+
+Please observe the performance impact with different "factor" values.
+
+4. WHERE TO LOOK FOR OUTPUTS
+
+The sequential timing data is recorded in "matrix.seq.time".
+
+The parallel timing data without xdr is in "$(HOME)/matrix.nxdr.time".
+
+The parallel timing data with xdr is in "$(HOME)/matrix.xdr.time".

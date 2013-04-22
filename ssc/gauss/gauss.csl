@@ -1,0 +1,16 @@
+
+configuration: gauss;
+/* This is a distributed parallel gauss elimination program */
+
+m: master = ga_master
+	(factor = 50
+        threshold = 1
+	 )
+   -> f: ts1    
+	( TYPE = TS )
+   -> m: worker = ga_wrk 
+	(type = slave)
+   -> f: ts2    
+	( TYPE = TS )
+   -> m: master;  
+

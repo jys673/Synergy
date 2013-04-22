@@ -1,0 +1,14 @@
+Configuration: xep;
+ R_DEBUG = 0;  
+/* This is a distributed parallel Fractal Demo system */
+
+m: master = xepclnt 
+	(factor = 20
+	threshold = 1
+	 )
+   -> f: coord 
+	( TYPE = TS )
+   -> m: worker1 = xepwrk (type = slave)
+   -> f: color 
+	( TYPE = TS )
+   -> m: master;  

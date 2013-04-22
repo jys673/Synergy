@@ -1,0 +1,15 @@
+configuration: fractal;
+/* This is a distributed parallel Fractal Demo system */
+
+m: master = frclnt
+	(factor = 20 /* defines chunk size or factor (1-100) */
+	threshold = 1
+	 )
+   -> f: coords 
+	( TYPE = TS)
+   -> m: worker = frwrk
+	(type = slave)
+   -> f: colors 
+	( TYPE = TS /* exec_loc = snowhite.cis.temple.edu::/ */)
+   -> m: master;  
+	

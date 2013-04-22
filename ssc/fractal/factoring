@@ -1,0 +1,3 @@
+cp frclnt.c.factor frclnt.c
+cp fractal.csl.manual fractal.csl
+echo "+++ Factoring. Use Factor to define partition ratio(1-100)."

@@ -1,0 +1,10 @@
+CFLAGS = 
+LIBS =
+CC = cc
+OBJS = bconvert.o bfile.o trans.o
+
+.c.o:
+	$(CC) -c $< $(CFLAGS) -o $@
+
+bconvert: bconvert.c bfile.c trans.c
+	$(CC) $(CFLAGS) $(OBJS) -o bconvert $(LIBS)

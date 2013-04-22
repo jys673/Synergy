@@ -1,0 +1,45 @@
+		Interactive Parallel Processing Demo 
+
+1. Introduction
+
+This is a program that was originally programmed using PVM. This version is
+modified to use Synergy V3.0 to demonstrate interactive parallel processing.
+
+2. Files
+
+The PVM program used tiles to calculate fractals (xep.c from PVM3.0 distribution). 
+This program cannot run unless a PVM daemon (pvmd) is active.
+
+The Synergy programs use "stripes" for parallel processing. They are "xepclnt.c" 
+and "xepwrk.c". The configuration file: "xep.csl". Note that the system will 
+automatically generate slave workers if run over a cluster of NFS linked processors.
+
+Please make sure that you have ~/.sng_hosts setup properly. If not, use the "shosts" 
+command. You may mark on/off hosts as you wish (uhosts & mhosts).
+
+3. Binaries
+
+Be sure to check the Synergy library path (-Lxxxx -lsng) in the makefile, 
+where "xxxx" must be the active Synergy V3.0 library path. Then simply enter "make".
+
+4. Run
+
+Make sure you have set the DISPLAY environment before starting the CID on the 
+host that runs "xepclnt". Then on the displaying station, enter "xhost +hostname".
+
+Then enter "prun xep &". 
+
+To monitor the parallel execution, enter: "pcheck" on a separate window.
+
+5. Change scheduling parameters
+
+Modify the "factor = 20" clause in "xep.csl" file to change load balancing factors 
+from (1-100). You can also change the threshold value: "threshold = 1" to some 
+other value.
+
+The scheduling algorithm works as follows. Assume that there are N=1000 strips to compute,
+P=2 slave processors and f = 50 (%): the working batch sizes:
+
+	250 250 125 125 63 63 32 32 ... 
+
+The timing differences can be observed using your own watch or from a stat file: "~/xep_cap.s93".

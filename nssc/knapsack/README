@@ -1,0 +1,51 @@
+                  Parallel Optimal 1/0 Knapsack Solver
+			-- An Independent Study 
+
+			    Rajeev Dubey
+			    Spring 1994 
+
+  			Instructor: Yuan Shi
+
+			@Temple University
+			   October 1994
+
+
+1. Introduction
+
+The 0/1 Knapsack problem can be stated as follows:
+
+	Given
+		W = (W1,..., Wn) weight of treasures
+		P = (P1,..., Pn) profits of treasuers
+		M : the capacity of the knapsack
+
+	Find	X = (X1,..., Xn), where Xi = 0 or 1, a decision
+vector such that sum(Pi) is maximized and sum(Wi) <= M.
+
+The 0/1 knapsack problem is NP-complete.
+
+The parallel implementation can achieve superlinear speedup if the inputs are
+highly co-related. 
+
+2. Parallel 0/1 Knapsack Implementation
+
+The coarse grain parallel 0/1 Knapsack programs are implemented using the Synergy 
+parallel programming system.
+
+The program structure is as follows:
+
+a) Master -- Responsible for generating C*P independent subtasks and for
+		collecting the C*P results.
+
+b) Worker -- Responsible for calculating the optimal X given a partial
+		solution (from the master). Repeats until a termination
+		signal is found.
+
+The master also generates an optimal value tuple by which all workers communicate
+their local optimal solutions.
+
+3. Superlinear Speedup
+
+To obtain superlinear speedup, we first find a random number seed that causes
+the sequential program to run for the longest time. We then use the same seed
+and random number generator in the parallel tests.

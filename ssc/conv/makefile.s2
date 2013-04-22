@@ -1,0 +1,10 @@
+CFLAGS = -DWNDX
+LIBS = -lm
+CC = cc
+OBJS = bconvert.c bfile.c trans.c
+
+.c.o:
+	$(CC) -c $@
+
+bconvert: bconvert.c bfile.c trans.c
+	$(CC) $(CFLAGS) $(OBJS) -o bconvert $(LIBS)

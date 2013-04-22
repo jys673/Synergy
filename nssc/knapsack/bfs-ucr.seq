@@ -1,0 +1,4 @@
+#Elements = 500, Capacity 13045, Elapsed Time(in seconds) 0.114000, #Operations 174050,		MFLOPS 1.52675
+#Elements = 1000, Capacity 25556, Elapsed Time(in seconds) 0.345000, #Operations 558012,		MFLOPS 1.61743
+#Elements = 1500, Capacity 38167, Elapsed Time(in seconds) 2.924000, #Operations 1.01793e+06,		MFLOPS 0.34813
+#Elements = 2000, Capacity 510976, Elapsed Time(in seconds) 4.246000, #Operations 1.71874e+06,		MFLOPS 0.404791

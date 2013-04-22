@@ -1,0 +1,24 @@
+/* lap.csl 
+ * This is a distributed parallel PDE Demo system for laplace equation*/
+ * Update History:
+ *	Initial version, Vasant Kumar, 12/14/94
+ *
+ */
+
+configuration: lap;
+
+m: master = lapclnt 
+	( factor = 100          /* for calibration and load balancing */
+                                /* Larger factor means better load balancing */
+	threshold = 110         /* explicit synchronization if less than 100 */
+				/* range (20-110); try first 110, if results */
+				/* are notsatisfactory, lower it             */
+	debug = 0		/* debugger flag */
+        )
+   -> f: problem 		/* problem TS */
+        (type = TS)
+   -> m: worker = lapwrk 
+	(type = slave)
+   -> f: result 		/* result TS */
+	(type = TS)
+   -> m: master;  

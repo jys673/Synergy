@@ -1,0 +1,117 @@
+
+ (yoda) Elapsed time = 11 seconds. n: (50)
+ MFLOPS: (2.056269) Iterations: (1673) Precision (0.000010)
+
+ (yoda) Elapsed time = 12 seconds. n: (50)
+ MFLOPS: (1.884913) Iterations: (1673) Precision (0.000010)
+
+ (yoda) Elapsed time = 68 seconds. n: (100)
+ MFLOPS: (1.530765) Iterations: (2001) Precision (0.000225)
+
+ (yoda) Elapsed time = 311 seconds. n: (200)
+ MFLOPS: (1.312680) Iterations: (2001) Precision (0.000360)
+
+ (yoda) Elapsed time = 2062 seconds. n: (400)
+ MFLOPS: (0.784116) Iterations: (2001) Precision (0.000378)
+
+ (yoda) Elapsed time = 5315 seconds. n: (600)
+ MFLOPS: (0.682190) Iterations: (2001) Precision (0.000378)
+
+ (yoda) Elapsed time = 8258 seconds. n: (800)
+ MFLOPS: (0.779275) Iterations: (2001) Precision (0.000378)
+
+ (jawa) Elapsed time = 13 seconds. n: (50)
+ MFLOPS: (1.739920) Iterations: (1673) Precision (0.000010)
+
+ (lando) Elapsed time = 35 seconds. n: (50)
+ MFLOPS: (0.646256) Iterations: (1673) Precision (0.000010)
+
+ (xwing) Elapsed time = 158 seconds. n: (100)
+ MFLOPS: (0.658810) Iterations: (2001) Precision (0.000225)
+
+ (xwing) Elapsed time = 134 seconds. n: (100)
+ MFLOPS: (0.776806) Iterations: (2001) Precision (0.000225)
+
+ (lando) Elapsed time = 1333 seconds. n: (500)
+ MFLOPS: (0.695705) Iterations: (736) Precision (0.000999)
+
+ (solo) Elapsed time = 1352 seconds. n: (500)
+ MFLOPS: (0.685928) Iterations: (736) Precision (0.000999)
+
+ (yoda) Elapsed time = 16 seconds. n: (50)
+ MFLOPS: (0.845845) Iterations: (1001) Precision (0.000133)
+
+ (lynox) Elapsed time = 9 seconds. n: (50)
+ MFLOPS: (1.503724) Iterations: (1001) Precision (0.000133)
+
+ (xwing) Elapsed time = 1761 seconds. n: (500)
+ MFLOPS: (1.431743) Iterations: (2001) Precision (0.000378)
+
+ (jawa) Elapsed time = 1782 seconds. n: (500)
+ MFLOPS: (1.414871) Iterations: (2001) Precision (0.000378)
+
+ (yoda) Elapsed time = 3377 seconds. n: (500)
+ MFLOPS: (0.746609) Iterations: (2001) Precision (0.000378)
+
+ (droids) Elapsed time = 1815 seconds. n: (500)
+ MFLOPS: (1.389146) Iterations: (2001) Precision (0.000378)
+
+ (lynox) Elapsed time = 1943 seconds. n: (500)
+ MFLOPS: (1.297633) Iterations: (2001) Precision (0.000378)
+
+ (saber) Elapsed time = 1970 seconds. n: (500)
+ MFLOPS: (1.279848) Iterations: (2001) Precision (0.000378)
+
+ (lando) Elapsed time = 3627 seconds. n: (500)
+ MFLOPS: (0.695148) Iterations: (2001) Precision (0.000378)
+
+ (anakin) Elapsed time = 3624 seconds. n: (500)
+ MFLOPS: (0.695723) Iterations: (2001) Precision (0.000378)
+
+ (solo) Elapsed time = 3757 seconds. n: (500)
+ MFLOPS: (0.671094) Iterations: (2001) Precision (0.000378)
+
+ (saber) Elapsed time = 7185 seconds. n: (1000)
+ MFLOPS: (1.392484) Iterations: (2001) Precision (0.000378)
+
+ (xwing) Elapsed time = 7192 seconds. n: (1000)
+ MFLOPS: (1.391129) Iterations: (2001) Precision (0.000378)
+
+ (jawa) Elapsed time = 7181 seconds. n: (1000)
+ MFLOPS: (1.393261) Iterations: (2001) Precision (0.000378)
+
+ (yoda) Elapsed time = 9996 seconds. n: (1000)
+ MFLOPS: (1.000901) Iterations: (2001) Precision (0.000378)
+
+ (solo) Elapsed time = 14260 seconds. n: (1000)
+ MFLOPS: (0.701612) Iterations: (2001) Precision (0.000378)
+
+ (lando) Elapsed time = 14302 seconds. n: (1000)
+ MFLOPS: (0.6995525) Iterations: (2001) Precision (0.000378)
+
+ (saber) Elapsed time = 1809 seconds. n: (500)
+ MFLOPS: (1.382671) Iterations: (2001) Precision (0.000378)
+
+ (xwing) Elapsed time = 1821 seconds. n: (500)
+ MFLOPS: (1.373558) Iterations: (2001) Precision (0.000378)
+
+ (jawa) Elapsed time = 1812 seconds. n: (500)
+ MFLOPS: (1.380381) Iterations: (2001) Precision (0.000378)
+
+ (yoda) Elapsed time = 2467 seconds. n: (500)
+ MFLOPS: (1.013883) Iterations: (2001) Precision (0.000378)
+
+ (solo) Elapsed time = 3520 seconds. n: (500)
+ MFLOPS: (0.710582) Iterations: (2001) Precision (0.000378)
+
+ (lando) Elapsed time = 3524 seconds. n: (500)
+ MFLOPS: (0.709775) Iterations: (2001) Precision (0.000378)
+
+ (yoda) Elapsed time = 1941 seconds. n: (500)
+ MFLOPS: (0.644642) Iterations: (1001) Precision (0.000757)
+ (yoda) Zero second recorded. n: (10).
+ (yoda) Zero second recorded. n: (10).
+ (yoda) Zero second recorded. n: (10).
+
+ (yoda) Elapsed time = 1 seconds. n: (10)
+ MFLOPS: (0.056000) Iterations: (112) Precision (0.000010)

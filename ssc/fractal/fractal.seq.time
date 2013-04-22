@@ -1,0 +1,3 @@
+Sequential time(179.753929) host(yoda) (600,600)(1024)(-1.000000,-1.000000)(0.200000,0.200000)(607) Effective speed of sequential program is : 12.175525 Mflops 
+Sequential time(182.105101) host(yoda) (600,600)(1024)(-1.000000,-1.000000)(0.200000,0.200000)(607) Effective speed : 12.018326 Mflops 
+Sequential time(981.234975) host(lando) (600,600)(1024)(-1.000000,-1.000000)(0.200000,0.200000)(607) Effective speed : 2.230453 Mflops 

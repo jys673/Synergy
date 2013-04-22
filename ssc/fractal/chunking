@@ -1,0 +1,3 @@
+cp frclnt.c.chunk frclnt.c
+cp fractal.csl.chunk fractal.csl
+echo "+++ Manual fixed chunking. Change Fractor to adjust chunk size in fractal.csl"

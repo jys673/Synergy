@@ -1,0 +1,17 @@
+0README	0/synergy/apps/ssc/fractal/README	argo.cis.temple.edu	70	+
+0auto	0/synergy/apps/ssc/fractal/auto	argo.cis.temple.edu	70	+
+0chunking	0/synergy/apps/ssc/fractal/chunking	argo.cis.temple.edu	70	+
+0factoring	0/synergy/apps/ssc/fractal/factoring	argo.cis.temple.edu	70	+
+0fractal.c	0/synergy/apps/ssc/fractal/fractal.c	argo.cis.temple.edu	70	+
+0fractal.csl	0/synergy/apps/ssc/fractal/fractal.csl	argo.cis.temple.edu	70	+
+0fractal.csl.auto	0/synergy/apps/ssc/fractal/fractal.csl.auto	argo.cis.temple.edu	70	+
+0fractal.csl.manual	0/synergy/apps/ssc/fractal/fractal.csl.manual	argo.cis.temple.edu	70	+
+0fractal.h	0/synergy/apps/ssc/fractal/fractal.h	argo.cis.temple.edu	70	+
+0fractal.seq.time	0/synergy/apps/ssc/fractal/fractal.seq.time	argo.cis.temple.edu	70	+
+0frclnt.c	0/synergy/apps/ssc/fractal/frclnt.c	argo.cis.temple.edu	70	+
+0frclnt.c.chunk	0/synergy/apps/ssc/fractal/frclnt.c.chunk	argo.cis.temple.edu	70	+
+0frclnt.c.factor	0/synergy/apps/ssc/fractal/frclnt.c.factor	argo.cis.temple.edu	70	+
+0frclnt.x.c	0/synergy/apps/ssc/fractal/frclnt.x.c	argo.cis.temple.edu	70	+
+0frwrk.c	0/synergy/apps/ssc/fractal/frwrk.c	argo.cis.temple.edu	70	+
+0frwrk.x.c	0/synergy/apps/ssc/fractal/frwrk.x.c	argo.cis.temple.edu	70	+
+0makefile.std	0/synergy/apps/ssc/fractal/makefile.std	argo.cis.temple.edu	70	+

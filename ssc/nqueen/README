@@ -1,0 +1,76 @@
+Introduction
+
+This directory contains the following programs:
+
+a) a sequential N-Queen solver
+b) a parallel N-Queen solver without XDR
+c) a parallel N-Queen solver with XDR.
+
+An N-Queen solver finds all legal positions of placing N queens in an NxN chess board.
+
+This example illustrates how to partition a recursive program for parallel
+processing. This is a deterministic recursive program in the sense that the
+sequential effective calcution steps are the same as parallel effective
+calculation steps.
+
+The sequential runs on a Sun SparcII processor produced the following results:
+
+--- WE FIND TOTAL OF 2 WAYS TO PLACE 4 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 0.001000 secs 
+
+--- WE FIND TOTAL OF 10 WAYS TO PLACE 5 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 0.001000 secs 
+
+--- WE FIND TOTAL OF 4 WAYS TO PLACE 6 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 0.002000 secs 
+
+--- WE FIND TOTAL OF 40 WAYS TO PLACE 7 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 0.004000 secs 
+
+--- WE FIND TOTAL OF 92 WAYS TO PLACE 8 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 0.012000 secs 
+
+--- WE FIND TOTAL OF 352 WAYS TO PLACE 9 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 0.051000 secs 
+
+--- WE FIND TOTAL OF 724 WAYS TO PLACE 10 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 0.234000 secs 
+
+--- WE FIND TOTAL OF 2680 WAYS TO PLACE 11 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 0.152000 secs 
+
+--- WE FIND TOTAL OF 14200 WAYS TO PLACE 12 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 13.736000 secs 
+
+--- WE FIND TOTAL OF 73712 WAYS TO PLACE 13 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 73.091000 secs 
+
+--- WE FIND TOTAL OF 365596 WAYS TO PLACE 14 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 453.623000 secs 
+
+--- WE FIND TOTAL OF 2279184 WAYS TO PLACE 15 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 3092.456000 secs 
+
+--- WE FIND TOTAL OF 14772512 WAYS TO PLACE 16 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 20458.643000 secs 
+
+--- WE FIND TOTAL OF 95815104 WAYS TO PLACE 17 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 104475.134000 secs 
+
+--- WE FIND TOTAL OF 666090624 WAYS TO PLACE 18 QUEENS
+--- THE TOTAL TIME USED IN THIS PROGRAM IS 578560.318000 secs 
+
+To make different binaries:
+
+a) %make queen  -- makes the sequential binary.
+b) %make nxdr 	-- makes the parallel binaries without xdr data handling.
+c) %make xdr	-- makes the parallel binaries with xdr data handling. 
+
+The execution results are stored in the following files:
+
+a) ./nq_seq.time 	-- sequential execution results.
+b) ~/nq_nxdr.time	-- parallel execution results without xdr. 
+c) ~/nq_xdr.time 	-- parallel execution results with xdr.
+
+Note that the parallel stat files are to be found in your home directory.
+The stat results are appended to the files after each run.

@@ -1,0 +1,12 @@
+configuration: subsum;
+
+/* This is a distributed parallel subsetsum system */
+f: input = subsum.dat ->
+m: master = subclnt
+   -> f: sumlens 
+	( TYPE = TS)
+   -> m: worker = subwrk (type = slave) 
+   -> f: results 
+	( TYPE = TS) 
+   -> m: master;  
+	

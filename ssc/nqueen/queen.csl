@@ -1,0 +1,16 @@
+configuration:	queen;
+/* This is a distributed parallel queen problem system */
+
+m: master = quclnt
+	(exec_loc = yoda::/
+	factor = 20
+	threshold = 1
+	debug = 0
+	)
+  -> f: work_ts
+ 	(type = TS)
+  -> m: worker = quwrk
+	(type = slave)
+  -> f: out_ts
+	(type = TS)
+  -> m: master;

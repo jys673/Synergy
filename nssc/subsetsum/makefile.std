@@ -1,0 +1,17 @@
+CFLAGS = -O -o
+OBJS =-L/.../.../obj -lsng 
+
+all: subwrk subclnt sub_seq copy  
+
+subclnt : subclnt.c
+	cc $(CFLAGS) subclnt subclnt.c $(OBJS) 
+
+subwrk : subwrk.c
+	cc $(CFLAGS) subwrk subwrk.c $(OBJS)
+
+sub_seq : sub_seq.c 
+	cc $(CFLAGS) sub_seq sub_seq.c $(OBJS) 
+
+copy : subclnt subwrk
+	cp subclnt $(HOME)/bin
+	cp subwrk $(HOME)/bin

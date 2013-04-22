@@ -1,0 +1,2 @@
+cp mtclnt.c.chunk mtclnt.c
+echo "Please use <factor = X> clause in matrix.csl to define chunk size."

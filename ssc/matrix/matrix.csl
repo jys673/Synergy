@@ -1,0 +1,15 @@
+/* This is a distributed parallel matrix multiplication Demo system */
+configuration: matrix;
+
+m: master = mtclnt 
+	(factor = 50
+	threshold = 1
+	debug = 0
+        )
+   -> f: problem 
+        (type = TS)
+   -> m: worker = mtwrk 
+	(type = slave) 
+   -> f: result 
+	(type = TS)
+   -> m: master;  

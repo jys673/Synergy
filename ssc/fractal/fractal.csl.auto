@@ -1,0 +1,12 @@
+configuration: fractal;
+/* This is a distributed parallel Fractal Demo system */
+
+m: master = frclnt (threshold = 1)
+   -> f: coords 
+	( TYPE = TS)
+   -> m: worker = frwrk
+	(type = slave)
+   -> f: colors 
+	( TYPE = TS /* exec_loc = snowhite.cis.temple.edu::/ */)
+   -> m: master;  
+	

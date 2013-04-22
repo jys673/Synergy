@@ -1,0 +1,69 @@
+			Mandelbrot Fractal Program
+
+1. What is it?
+
+This directory contains the parallel Mandelbrot ploting program. 
+
+There are three REAL programs: 
+
+	fractal.c (the sequential fractal program), 
+	frclnt.c (master) and 
+	frwrk.c (worker). 
+
+There are a number of load balancing algorithms that can show interesting
+properties of parallel processing:
+
+	o Enter: %chunking
+		will create a version of manual fixed chunking program.
+	o Enter: %factoring
+		will create a version of manual factoring (variable size
+		partitioning) program.
+	o Enter: %auto
+		will create a version of automatic load balancing using
+		fixed chunking.
+
+2. What to see?
+
+The default display mode is off. This way the X overhead will not be interfaring
+with the timing measureas. If you do want to see the pretty pictures, please
+change the pre-processor symbol: DISPLAY 0 to 1 in frclnt.c (after the above
+steps).
+
+3. How to tune?
+
+The application configuration file is fractal.csl. You can modify 
+it to change the scheduling parameters, such as factor and threshold.
+ 
+When using factoring, the "factor =" clause defines 
+the scheduling parameter ( 0 < factor <=100). Usually the smaller 
+values give better performance, if your hosts are very different in 
+capacity (or MFLOPS rating). Otherwise, a large factor value may be
+required to run things fast. If your machines are very powerful, say at
+100 MFLOPS grade, you can define threshold (in the "threshold =" clause)  
+to be of a bigger value. This can save some communication time. You are 
+challenged to find the best factor and threshold values for your own 
+operating environment. 
+
+When using fixed chunking (frclnt.c.chunk), the load blancing solution is buit 
+into the fractal master (frclnt.c). To by-pass the automatic load balancing
+feature, define factor > 0. In this case, the threshold value defines the 
+grain size of the tester computation.
+
+4. Other Information
+
+The header file: fractal.h defines the plotting parameters, such as 
+the input domain range, display resolution, maximal iteration limit 
+(max number of colors), etc. It also contains the definitions of tuple 
+data structures.
+
+The sequential Mandelbrot program produces a stat file to record the 
+timing statistics. The file name is fr_seq.s93. The parallel program 
+(frclnt.c) also produces a stat file named fr_stat.s93 recording the 
+results of each experiment.
+
+There are many commented printf statements in the program files. You 
+may uncomment them to see how the programs work in parallel. But comment 
+them out when you do timing studies.
+
+The makefile links the X11 header files and library for the setting we have
+in the lab. You may have to change the path to suite your installations.

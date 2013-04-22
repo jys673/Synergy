@@ -1,0 +1,24 @@
+		        Parallel Data Conversion
+
+		               Wenhai Jian
+			      February 1995 
+
+
+1. What is it?
+
+This is an re-engineered code by John Timlin of Temple Graphics Inc. for
+converting raw census data into Temple graph internal format. 
+
+The sequential program takes about 40 minutes to convert 80MB raw data.
+On a smaller test data set (1.8MB), it takes 62 second on an Alpha processor.
+
+2. What to see?
+
+The parallel version uses 4 variously equipted Alpha processors and finished
+the same 1.8MB data conversion in 15 seconds.
+
+3. Misc. Information
+
+The file names are hard coded in the program convlnt.c and a file named "config.sys". Please modify them before running.
+
+

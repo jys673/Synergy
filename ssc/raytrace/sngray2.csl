@@ -1,0 +1,17 @@
+configuration: test2; 
+R_DEBUG = 0;
+
+m: master = sngray2
+          (exec_loc = yoda::/
+           factor =  1
+           threshold = 5
+           debug = 1
+           )
+   -> f: job
+        (type=TS)
+   -> m: worker = wrk2
+          (type=slave)
+   -> f: output
+        (type=TS)
+   -> m: master;
+

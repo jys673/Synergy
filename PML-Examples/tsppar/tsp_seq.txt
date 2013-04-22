@@ -1,0 +1,61 @@
+Sequential TSP starting, n: 10, seed 776312761
+Best tour cost: -1473704405. 
+path: 1 3 4 5 7 2 9 8 10 6 
+Number of operations: 1189
+Run time: 0 seconds
+Sequential TSP starting, n: 11, seed 776312761
+Best tour cost: 9274240. 
+path: 1 3 7 4 2 9 6 8 11 10 5 
+Number of operations: 1141
+Run time: 0 seconds
+Sequential TSP starting, n: 12, seed 776312761
+Best tour cost: -232570388. 
+path: 1 3 4 5 2 8 11 9 10 12 6 7 
+Number of operations: 2489
+Run time: 1 seconds
+Sequential TSP starting, n: 13, seed 776312761
+Best tour cost: -1976759528. 
+path: 1 3 2 7 10 12 6 5 9 4 11 8 13 
+Number of operations: 1776
+Run time: 0 seconds
+Sequential TSP starting, n: 14, seed 776312761
+Best tour cost: -633669319. 
+path: 1 3 13 6 9 8 10 12 2 5 14 11 7 4 
+Number of operations: 7506
+Run time: 48 seconds
+Sequential TSP starting, n: 15, seed 776312761
+Best tour cost: -381788472. 
+path: 1 3 11 12 13 15 5 8 14 2 4 7 6 10 9 
+Number of operations: 8471
+Run time: 78 seconds
+Sequential TSP starting, n: 15, seed 12761
+Best tour cost: -499054662. 
+path: 1 6 3 13 8 14 10 4 5 9 12 7 15 2 11 
+Number of operations: 15911
+Run time: 306 seconds
+Sequential TSP starting, n: 12, seed 12761
+Best tour cost: 55431344. 
+path: 1 11 12 9 3 2 4 7 5 10 8 6 
+Number of operations: 1071
+Run time: 0 seconds
+Sequential TSP starting, n: 12, seed 12761
+Best tour cost: 55431344. 
+path: 1 11 12 9 3 2 4 7 5 10 8 6 
+Number of operations: 1071
+Run time: 0 seconds
+Sequential TSP starting, n: 11, seed 12761
+Best tour cost: -332222499. 
+path: 1 6 2 9 7 11 8 5 3 4 10 
+Number of operations: 348
+Run time: 0 seconds
+Sequential TSP starting, n: 11, seed 12761
+Best tour cost: -332222499. 
+path: 1 6 2 9 7 11 8 5 3 4 10 
+Number of operations: 348
+Run time: 0 seconds
+Sequential TSP starting, n: 11, seed 12761
+Best tour cost: 2000. 
+path: 1 11 8 9 7 2 5 6 3 4 10 
+Number of operations: 4846
+Run time: 8 seconds
+Sequential TSP starting, n: 15, seed 12761

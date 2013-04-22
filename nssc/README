@@ -1,0 +1,35 @@
+		    Synergy V3.0 Evaluation Release
+                     Example Synergy Applications
+		 (None Solution Space Compact Examples)
+
+			(c)Temple University
+			    Feburary 1995
+
+These algorithms's solution spaces are not compact. This meeans that 
+a parallel implementation of the same algorithm can enjoy time savings
+that are not possible for a sequential impelementation. For example, an
+insertion sort algorithm does not have a compact solution space. This is
+because the parallel calculation of the decomposed input elements requires
+less than 1/p share of the total sequential steps (a possible superlinear 
+speedup). For example, ignoring overhead, (n^2)/p > (n/p)^2, for p > 1. 
+
+One characteristic of non-solution space compact algorithms is that they
+can be solved by independent processing of decomposed domains.
+
+The following three subdirectories deal with more complex problems:
+
+	msort		-- a parallel bubble sort example using pipes.
+	knapsack	-- a parallel 0/1 knapsack solver (NP-complete). 
+	subsetsum	-- a parallel sum of subsets solver (NP-complete).
+	tsppar          -- a parallel Traveling Salesman solver (NP-complete).
+
+Except for msort, for selected inputs, all of them can deliver superlinear 
+speedups. The fine grain data transmission method used in msort prevents it
+from achieving any speedup for small input sizes.
+
+Please read the individual README files for detailed instructions.
+
+Note:
+  These examples are projects from CIS750, CIS669 and CIS673 courses.
+They were rudimentally tested. Please report any problems to 
+shi@falcon.cis.temple.edu.

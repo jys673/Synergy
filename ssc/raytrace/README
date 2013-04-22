@@ -1,0 +1,283 @@
+
+                   CIS 750
+                   Instructor: Dr Yuan Shi
+                   Student: Chia Shin Fu 
+
+   
+    This is about the information of the programs that I used to
+    combine SNYERGY & POV-Raytracing together to create a parallel
+    program to compute the ray-tracing scenes. It includes:
+
+ 
+                    1. Porgrams
+                    2. Installation
+                    3. Performance
+                    4. My conclusions
+
+
+  
+1. Programs:
+
+   You will need the following programs to compile:
+
+        The Persistence of Vision Raytracer POV-Ray 2.0 files. 
+        Written by the POV team, the writers' name are in the front
+        of each programs.
+ 
+		BEZIER.C      - bicubic patch shape routines
+		BLOB.C        - blob shape routines
+		BOUND.C       - auto-bounding slab routines
+		BOXES.C       - box shape routines
+		CAMERA.C      - camera routines
+		COLOUR.C      - color manipulation routines
+		CONES.C       - cone and cylinder shape routines
+		CSG.C         - constructive solid geometry shape routines
+		DISCS.C       - flat 2d disc shape routines
+		DUMP.C        - RGB dump file handler routines
+		EXPRESS.C     - float expression and color parsing routine
+		FRAME.H       - header containing typedefs, constants and data
+                                structures
+		GIFDECOD.C    - generic GIF LZW decoder module
+		GIF.C         - GIF file handler routines
+		HFIELD.C      - height field shape routines
+		IFF.C         - IFF file handler routines
+		IMAGE.C       - image, material, bump map routines for textures
+		LIGHTING.C    - lighting calculation routines
+		MATRICES.C    - 3d transformation matrices routines
+		NORMAL.C      - normal perturbation texture routines
+		OBJECTS.C     - general routines for all objects
+		PARSE.H       - header for PARSE.C, EXPRESS.C and TOKENIZE.C
+		PARSE.C       - file parser for POV-Ray language
+		PIGMENT.C     - color pattern routines for textures
+		PLANES.C      - plane shape routines
+		POINT.C       - light source routines
+		POLY.C        - poly, cubic, and quartic shape routines
+		POVPROTO.H    - header containing all function prototypes
+		POVRAY.C      - main program, command line parsing routines
+		QUADRICS.C    - quadric shape routines
+		RAW.C         - RAW RGB image file handler routines
+		RAY.C         - ray manipulation routines
+		RENDER.C      - routines to implement main program loop
+		SOURCE.CAT    - list of files in \POVSRC\SOURCE directory
+		SPHERES.C     - sphere shape routines
+		TARGA.C       - Targa file handler routines
+		TEXTURE.C     - main texture module
+		TEXTURE.H     - header used by texture modules
+		TOKENIZE.C    - DAT file tokenizer for POV-Ray language
+		TRIANGLE.C    - triangle and smooth triangle shape routines
+		TXTTEST.C     - dummy routines for testing new texture types
+		VECTOR.H      - header for vector math macros
+		VECT.C        - support routines for poly shapes
+
+
+
+       The program to assign the parallel jobs and the viewer program:
+
+       (I wrote them... but the CH_HEADER, CH_WORK, CH_MAST are from
+        Faisal G. Hassan, Fei Jian SUN, Wenhai Jiang & Dr. Yuan Shi )
+
+                SNG-RAY.H     - header file for the sng-ray
+                SNG-RAY.C     - a parse program for povray.def file
+                SNGRAY1.C     - the master of parallel ray tracing
+                                with fixed chunk. 
+                RENDER1.C     - the worker of parallel ray tracing
+                SNGRAY2.C     - same as SNGRAY1 but with processors'
+                                speed detection, so it can assign 
+                                the best chunk of jobs.
+                RENDER2.C     - the worker for SNGRAY2.
+                CH_HEADER.H   - the header for CH_WORK & CH_MAST
+                CH_WORK.H     - the worker to detect the processors'
+                                speed.
+  	        CH_MAST.H     - the master to calculate the best chunk.
+
+
+                DRAW.C        - the drawing function for the viewer program. 
+                SHOW.C        - the viewer program to view the result image. 
+
+                
+                makefile      - the makefile to compile all the programs.
+                                It has beed tested on 'yoda'.
+
+                                The makefile will produce the following 
+                                executable programs:
+
+                                   povray   --  the sequential ray tracing
+                                                program.
+                                   sngray1  --  the master for fixed chunk
+                                                parallel ray tracing.
+                                   wrk1     --  the worker for sngray1.
+                                   sngray2  --  the master for optimal fixed
+                                                chunk.
+                                   wrk2     --  the worker for sngray2
+                                   showout  --  the viewer
+
+                
+
+        Beside the programs, we need some more information files to run:
+
+                 
+                sngray1.csl  -- the configuration file for sngray1 & wrk1.
+                sngray2.csl  -- the configuration file for sngray2 & wrk2. 
+                povray.def   -- the configuration file for calculating the 
+                                scene.
+                XXXX.pov     -- the POV scene file, I included 'pawns.pov'
+                                in this tar file.
+                XXXX.inc     -- some include file needed for the pov files.
+                                They are: 
+                                           textures.inc
+                                           stones.inc
+                                           spline.inc
+                                           shapes.inc
+                                           shape2.inc
+                                           shapeq.inc
+                                           colors.inc
+                                           chars.inc
+                                           fov.inc
+                                           ior.inc
+               
+
+2. Installation:
+
+   A: You will need SYNERGY to run it.
+
+     SYNERGY has to be installed properly. Including setup the .sng_hosts
+     files & SNG_PATH. For different users, there are some lines in the 
+     'makefile' need to be change. Such as '-L/usr/local/synergy/obj' &
+     other compiler options.
+
+     Just type 'make', it will compile every program.
+
+   B: You need to CHANGE the 'povray.def'
+    
+     Before running the ray tracing programs, we need a povray.def file.
+     This file will tell the ray tracing program our choices of the scene
+     we want.
+
+     ex: in the tar file, I have a povray.def, it is:
+
+        +Ipawns.pov +h400 +w400 +q9 +L/home/yoda/cfu/synray
+
+        
+            The +Ipawns.pov means that we specify the scene file to
+            be pawns.pov.
+            The +h400 & +w400 specify the scene to be 400X400 pixels
+            The +q9 is the picture quality option: 0~9, 9 is the finest value.
+
+        **  The +L/home/yoda/cfu/synray tell the program go to that directory
+            to read the necessary data files such as color.inc, shapes.inc.
+            The users will need to CHANGE this path to their own path.
+
+ 
+   C:  How I run it?
+      
+       (i) about create the image by sequential:
+ 
+           just type 'povray +Ipawns.pov +Opawns.tga ', then
+           it will produce the scene in Targa format. 
+
+           (I don't know where can I get a Targa viewer on X)
+
+       (2) about create the image by parallel:
+
+       
+       You need the configuration files for SYNERGY, the CSL files.
+       I include 2 CSL files, they are:
+  
+              sngray1.csl  --- for the fixed chunk
+              sngray2.csl  --- for the optimal fixed chunk
+
+       just use 'prun sngray1' or 'prun sngray2' to run it.
+
+       It will create a binary image file called 'povray.out'.
+       It is a 24 bit image file. But I only wrote a 8-bit viewer for
+       it. (Since I don't have a 24-bit video card) 
+          
+       Just type 'showout povray.out' to see the image.  You will see that
+       each line of the image will not show up in order since there are many
+       processors process them in different order.
+
+       PS: I didn't use private color map on this program, so if the user
+           use up all his color map on the machine, (like doing the xv),
+           the 'showout' program will quit automatically since it can not
+           allocate the colors. 
+
+
+3. Performance:
+   For rendering the 'pawns.pov' scene with 400x400 pixels and quality 9.
+
+   (-) On sequential & parallel:
+ 
+    A: By sequentail povray program:  
+
+         HOST:      ELAPSE TIME (seconds)
+                         
+         yoda           727
+         r2d2          3362
+         c3p0          3399
+         chewbaca      3390
+         leia          3371
+         anakin        3348
+         bobafet       3385
+         rancor        3388
+         xwing         1891
+         jawa          1885
+         gredo         1882
+         owin          1882
+         veru          1887
+         lynox         1889
+         emperor       1883
+         sabor         1884
+ 
+    B: With fixed chunk parallel 'sngray1' & 'wrk1' programs:
+       Same scene and same options. With all the 16 Hosts run
+       parallel together.
+
+         Host:       Elapse time (sec):  -- with CHUNK 3
+
+          16          158
+
+
+    (=) On Fixed chunk & Optimal Fixed chunk:
+        With 7 hosts: yoda, r2d2, leia, c3p0, chewbaca, rancor, veru
+        Same scene & rendering options.
+    A: 
+        CHUNK:   TIME:(sec)
+
+           1       437
+           5       542
+          10       447
+
+    B:
+        OPT CHUNK:  TIME:(sec)
+
+          46       320
+          41       301
+          40       305
+
+
+4. Conclusion:
+
+   It is not so easy to do the TIME model in this program... 
+   (since I am not so familier with ray tracing program details)
+   but what we can do here is try to get the speed up from
+   the experiment numbers.
+
+        Suppose that all the hosts will process the same amount
+        of jobs:
+
+        Then Tseq= Sum of each host's process time/ host numbers
+                 = 39453 / 16 = 2466
+
+        And Tpar= 158
+
+        So Efficient= 2466/(158*P) = 2466/158/16 = 97.54 % 
+      
+   But, there are many other issues will affect the performance of 
+   the programs. For example, if the host is too busy, it might
+   swap out your process temporarily. The host 'yoda' is the most
+   suspicious one to have our process swap out since there are too
+   many other users.  
+
+   However, the experiment did show that we have achieved good
+   performance on the ray tracing programs. Also, the SNGRAY2 is
+   faster than SNGRAY1, just as we expect it to be.

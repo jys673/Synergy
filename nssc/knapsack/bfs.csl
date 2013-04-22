@@ -1,0 +1,17 @@
+configuration: bfs;
+/* This is a distributed parallel BFS BB KNAPSACK system */
+
+m: master = bfs-master
+	(factor = 20
+	threshold = 1
+	debug = 3
+	 )
+   -> f: Nodes
+	( TYPE = TS),
+        Items 
+	( TYPE = TS),
+	OptVal
+	( TYPE = TS)
+   -> m: worker = bfs-worker (type = slave) 
+   -> f: Results (TYPE = TS)
+   -> m: master;  

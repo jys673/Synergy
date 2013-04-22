@@ -1,0 +1,50 @@
+            Solving the Subsetsum Problem in Parallel
+		-- An Independent Study Report
+
+		Instructor: Dr. Yuan Shi	
+
+                        Hong M Lee
+                 hlee@yoda.cis.temple.edu
+		      September 1994
+
+
+INTRODUCTION
+
+The subset sum problem is that given a set of N integers and a target integer, 
+the problem is to find if there exists a subset whose sum is equal to the 
+target. This problem is NP-complete [1].
+
+For a given worst-case input, i.e. the summation of all input numbers - 1,
+this program gives superlinear speedup. The largest speedup recorded is 1800
+using 6 sparc stations.
+
+There are three REAL programs :
+
+        sub_seq.c       : the sequential subsetsum program
+        subclnt.c       : the parallel master program
+        subwrk.c        : the parallel worker program
+
+The subsum.dat file stores the input of the set and the target.
+It is created either by the program ran_find.c or ran_notfind.c.
+
+ran_find.c prompts for size of the set, size of the subset and a
+seed number to generate the set and target such that target will
+be found from a subset sum. When the subset size is n-1, this 
+program generates the close-to-worst case input.
+
+ran_notfind.c prompt for size of the set and a seed number to
+generate the set and target such that target will not be found 
+from any subset sum. This is the worst-case input.
+
+The header file "sub.h" defines the subsetsum parameters, such 
+as the maximum set size, the way of partitioning the sizes of
+subsets and number of subset size put into a tuple. You are
+challenged to adjust these values for a better performance. It 
+also contains the definitions of tuple data structure.
+
+For precision timing measures, it is suggested that you add processors
+in a strict order, for example highest to lowest power.
+
+Note that in "subsum.csl", the path of subsum.dat will have to
+be explicitly stated if the file is located on a different directory than
+the default (the directory you run "prun subsum").

@@ -1,0 +1,69 @@
+                 SOLUTION OF LAPLACE EQUATION ON SYNERGY
+                 =======================================
+			Vasant Kumar
+			January 1995 
+	
+A description of the contents follows:
+
+lap.c, lap.h 
+------------
+	Program lap.c is the sequential version of the solution of 
+two-dimensional Laplace equation (an elliptic PDE). For details please
+refer to the header of the file lap.c
+
+        To run this program
+-- set parameters in lap.h
+-- build executable "lap" using make
+-- run   
+
+
+lapclnt.c, lapwrk.c, lap.csl, lap.h
+-----------------------------------
+	Program lapclnt.c is the client, lapwrk.c is the worker, and lap.csl
+is the csl file for the parallel solution of the two-dimensional Laplace 
+equation. For details, please refer to the header of lapclnt.c and lapwrk.c.
+
+	To run the parallel version on Synergy
+-- set parameters in lap.h
+-- build executables "lapclnt" and "lapwrk" using make
+-- set parameters in lap.csl
+       factor: no. of calibraion iterations. Set a value (Larger the value
+               larger is the calibration time. A calibration time more than
+               15 sec. should be O.K. Suggested range (50 for DIM >= 500;
+               500 for DIM = 100-200). You control load balancing using
+  	       factor. If the system is highly unstable use still larger
+               value.
+
+    thresold:  provides explicit synchronization. suggested range (20 - 110).
+               Smaller the thresold higher is the explicit synchronization
+               and more is the time spent on communication. A value over 100
+               means no explicit synchonization. 
+
+-- run using "prun lap &"
+
+
+A Note On Load Balancing
+========================
+	A perfect load balance means all the worker end their respective 
+iterations almost at the same time without explicit synchronization using
+thresold in lap.csl. Attempt should be made to achieve a satisfactory
+load balance using factor in lap.csl. If the system does not permit reasonable
+load balance, start decreasing thresold from 100 in steps till you a get a
+better result in terms of maximum residual obtained and time spent. A value
+of thresold less than 20 might result in excessive communication and hence
+might give worse result.
+
+
+Global residual
+===============
+	An acceptable value of the global residual depends upon an application.
+Should it be more than 0.05 attempts should be made to decrease it by doing
+one or more of the followin:
+
+-- increase factor to do better load balancing
+-- increase MAXITER
+-- increase synchronization by decreasing thresold
+
+
+Good Luck!
+

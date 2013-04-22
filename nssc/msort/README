@@ -1,0 +1,17 @@
+		         Parallel Mergesort
+
+This example illustrates the use of pipes in parallel programs
+via a toy mergesort system. It contains four parallel sorters,
+a spliter and a merger. For the given data file, no speedup can
+be atained. It is possible to obtain better speedup for larger
+data sizes. However, the prospects are NOT good. The main reason
+for this is that sort is NOT a compute intense application [see
+$SNG_PATH/docs/tmodels.ps for explanations].
+
+There is no parameter to adjust. If this system runs on a cluster
+with more than one file system, attention must be paid to the
+location of the input file. This location must be specified in
+msort.csl to make the system run properly.
+
+You may try to use specific processor assignments. Theoretically
+they should produce the same results as automatic assignments.

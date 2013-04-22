@@ -1,0 +1,17 @@
+configuration: tsp;
+R_DEBUG = 0;  
+/* This is a distributed parallel TSP */
+
+m: master = tspclnt
+	(EXEC_LOC = snowhite.cis.temple.edu::/usr/users/smaldony/tsp/tsppar
+	factor = 20
+	threshold = 1
+	debug = 3
+	 )
+   -> f: general
+	( TYPE = TS)
+   -> m: worker = tspwrkr
+	(EXEC_LOC = snowhite.cis.temple.edu::/usr/users/smaldony/tsp/tsppar)
+   -> f: nodes 
+	( TYPE = TS /* exec_loc = edu::/usr/users/smaldony/fractal */   )
+   -> m: master;  

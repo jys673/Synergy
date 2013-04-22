@@ -1,0 +1,40 @@
+		    Synergy V3.0 Evaluation Release
+                     Example Synergy Applications
+		   (Solution Space Compact Examples)
+
+			(c)Temple University
+			    Feburary 1995
+
+These algorithms have compact solution spaces. This means that a parallel
+processing scheme will need at least 1/p share of the corresponding
+sequential processing steps. Matrix multiplication is an example. 
+
+The following subdirectories deal with a variety of ssc problems:
+
+	fractal 	-- a parallel Mandelbrot system,
+				an ideal testbed for load balancing algorithms.
+	xepp		-- a parallel interactive Mandelbrot system,
+				a program transplanted from PVM.
+	matrix		-- a parallel matrix multiplication system.
+	gauss		-- a parallel linear solver using Gaussian Elimination,
+				a demo of complex program-to-program 
+				synchronization and communication using 
+				multiple tuple space objects.
+	nqueen		-- a parallel N-Queen solver, it finds all possible
+				legal placements of N Queens in an NxN chess 
+				board. A deterministic recursive program 
+				example.
+	laplace		-- a parallel heat transfer simulation program using
+				a relaxed fixed point algorithm.
+	raytrace	-- a parallel ray tracer using POV and Synergy.
+	albm		-- a matrix multiplication example. This program
+				can automatically balance the fluctuating
+				work loads of heterogeneous processors
+				delivering near optimal speedup.
+
+Please read the individual README files for detailed instructions.
+
+Note:
+  These examples are projects from CIS750, CIS669 and CIS673 courses.
+They were rudimentally tested. Please report any problems to 
+shi@falcon.cis.temple.edu.

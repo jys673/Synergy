@@ -1,0 +1,12 @@
+
+#Elements = 10, Capacity 170, OptimalFilling 170, Elapsed Time(in seconds) 0.001000, #Operations 1647,		MFLOPS 1.647 SEED 111
+#Elements = 15, Capacity 314, OptimalFilling 314, Elapsed Time(in seconds) 0.190000, #Operations 90026,		MFLOPS 0.473821 SEED 111
+#Elements = 20, Capacity 476, OptimalFilling 476, Elapsed Time(in seconds) 4.312000, #Operations 2.19087e+06,		MFLOPS 0.508086 SEED 111
+#Elements = 21, Capacity 510, OptimalFilling 510, Elapsed Time(in seconds) 9.715000, #Operations 4.2966e+06,		MFLOPS 0.442265 SEED 111
+#Elements = 22, Capacity 549, OptimalFilling 549, Elapsed Time(in seconds) 267.583000, #Operations 8.35987e+06,		MFLOPS 0.0312421 SEED 111
+#Elements = 22, Capacity 523, OptimalFilling 523, Elapsed Time(in seconds) 10.898000, #Operations 5.68186e+06,		MFLOPS 0.521367 SEED 11
+#Elements = 22, Capacity 654, OptimalFilling 649, Elapsed Time(in seconds) 0.588000, #Operations 5.68189e+06,		MFLOPS 9.66307 SEED 31
+#Elements = 22, Capacity 502, OptimalFilling 502, Elapsed Time(in seconds) 271.308000, #Operations 7.97047e+06,		MFLOPS 0.0293779 SEED 121
+#Elements = 22, Capacity 564, OptimalFilling 555, Elapsed Time(in seconds) 79.403000, #Operations 7.9705e+06,		MFLOPS 0.10038 SEED 313
+#Elements = 22, Capacity 566, OptimalFilling 566, Elapsed Time(in seconds) 8.935000, #Operations 4.79744e+06,		MFLOPS 0.536927 SEED 757
+#Elements = 22, Capacity 560, OptimalFilling 560, Elapsed Time(in seconds) 0, #Operations 6.227e+06,		MFLOPS 1.03783 SEED 111

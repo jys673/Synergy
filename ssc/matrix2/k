@@ -1,0 +1,6 @@
+KILL dac
+KILL tsh
+KILL mtclnt
+KILL mtwrk
+make
+prun matrix

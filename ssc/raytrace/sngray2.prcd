@@ -1,0 +1,117 @@
+sngray2
+%
+worker$6
+155.247.16.177 /home/yoda/cfu/synray/wrk2 NotAvailable
+155.247.177.20 */wrk2 cfu
+prot = tcp 
+f = 0
+p = 1
+t = 1
+d = 0
+!
+t * job job
+t * output output
+:
+%
+worker$5
+155.247.16.177 /home/yoda/cfu/synray/wrk2 NotAvailable
+155.247.177.14 */wrk2 cfu
+prot = tcp 
+f = 0
+p = 1
+t = 1
+d = 0
+!
+t * job job
+t * output output
+:
+%
+worker$4
+155.247.16.177 /home/yoda/cfu/synray/wrk2 NotAvailable
+155.247.177.7 */wrk2 cfu
+prot = tcp 
+f = 0
+p = 1
+t = 1
+d = 0
+!
+t * job job
+t * output output
+:
+%
+worker$3
+155.247.16.177 /home/yoda/cfu/synray/wrk2 NotAvailable
+155.247.177.5 */wrk2 cfu
+prot = tcp 
+f = 0
+p = 1
+t = 1
+d = 0
+!
+t * job job
+t * output output
+:
+%
+worker$2
+155.247.16.177 /home/yoda/cfu/synray/wrk2 NotAvailable
+155.247.177.4 */wrk2 cfu
+prot = tcp 
+f = 0
+p = 1
+t = 1
+d = 0
+!
+t * job job
+t * output output
+:
+%
+worker$1
+155.247.16.177 /home/yoda/cfu/synray/wrk2 NotAvailable
+155.247.177.3 */wrk2 cfu
+prot = tcp 
+f = 0
+p = 1
+t = 1
+d = 0
+!
+t * job job
+t * output output
+:
+%
+master
+155.247.16.177 /home/yoda/cfu/synray/sngray2 NotAvailable
+155.247.177.1 */sngray2 cfu
+prot = tcp 
+f = 1
+p = 7
+t = 5
+d = 1
+!
+t * output output
+t * job job
+:
+%
+worker
+155.247.16.177 /home/yoda/cfu/synray/wrk2 NotAvailable
+155.247.177.1 */wrk2 cfu
+prot = tcp 
+f = 0
+p = 1
+t = 1
+d = 0
+!
+t * job job
+t * output output
+:
+@
+t job 155.247.177.1 cfu
+t output 155.247.177.1 cfu
+-
+worker$5:
+worker$4:
+worker$3:
+worker$2:
+worker$1:
+master:
+worker:
+:

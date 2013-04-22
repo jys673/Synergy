@@ -1,0 +1,54 @@
+	Parallel Linear System Solver Using Gaussian Elimination
+
+			    M. Cheng
+			 (c) Temple University
+			   January 1994
+
+1. Introduction
+
+   Gaussian Elimination is a well known numerical method for solving linear
+systems Ax = b. In parallel implementations, however, it's communication
+volume grows in the same order as it's computing complexity (O(n**3)).
+Therefore, unless a very high speed interconnection network is in place, a
+straightforward implementation of parallel Gaussian solver will not deliver
+good speedup [1].
+
+   This excercise was intended to illustrate the use of tuple space objects
+for complex program-to-program communication and synchronization requirements. It uses straightforward tuple naming techniques to accomplish these
+requirements. However, using Ethernet clustered computers, speedup is
+impossible [see Timing Model analysis report].
+
+2. Files
+
+   a) ga_seq.c  -- The sequential solver.
+   b) ga_clnt.c -- The parallel master.
+   c) ga_wrk.c  -- The parallel worker. 
+   d) gauss.h   -- The header file shared by all programs.
+   e) gauss.csl -- The parallel configuration file. 
+
+3. Binaries
+
+   First make sure that Synergy object library path is correct in your
+makefile (-Lxxxx -lsng) where xxxx should be the active synergy lib path.
+
+  Then enter: make
+
+4. Running
+
+   Enter: prun gauss 
+
+   to start the parallel solver.
+
+   It may be more fun to enter the debugging mode. Try: prun gauss debug.
+You then should open two windows, one for master and one for the worker.
+Both windows should be at the this directory. Enter: master.dbx in one
+window and worker.dbx in the other.
+
+   You then will be able to watch the programs running in parallel using 
+your familiar dbx commands.
+
+REFERENCE
+
+Shi, Y. Timing Models -- Towards the Scalability Analysis of Parallel 
+	Programs, Technical Report 03-94, Center for Advanced Computing and 
+	Communications, Temple University, Philadelphia, PA 19122.

@@ -1,0 +1,16 @@
+configuration: tsp;
+R_DEBUG = 0;  
+/* This is a distributed parallel TSP */
+
+m: master = tspclnt
+	(factor = 20
+	threshold = 1
+	debug = 3
+	 )
+   -> f: general
+	( TYPE = TS)
+   -> m: worker = tspwrkr
+	(type = slave) 
+   -> f: nodes 
+	( TYPE = TS )
+   -> m: master;  

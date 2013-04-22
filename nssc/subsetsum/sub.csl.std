@@ -1,0 +1,25 @@
+configuration: subsetsum;
+R_DEBUG = 0;  
+/* This is a distributed parallel Subsetsum Demo system */
+
+m: master = subclnt 
+	(exec_loc = hostname::directory
+	debug = 3
+	 )
+   -> f: sumlens 
+	( TYPE = TS)
+   -> m: worker = subwrk 
+	(exec_loc = hostname::directory), 
+	worker2 = subwrk
+	(exec_loc = solo.yoda.temple.edu::/home/yoda/hlee/subsetsum) 
+/*      ,       
+	worker3 = subwrk 
+	(exec_loc = r2d2.yoda.temple.edu::/home/yoda/hlee/subsetsum), 
+	.
+	.
+	.
+*/
+   -> f: results 
+	 ( TYPE = TS )
+   -> m: master;  
+	

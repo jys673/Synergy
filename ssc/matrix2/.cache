@@ -1,0 +1,15 @@
+0README	0/synergy/apps/ssc/matrix/README	argo.cis.temple.edu	70	+
+0factoring	0/synergy/apps/ssc/matrix/factoring	argo.cis.temple.edu	70	+
+0fchunking	0/synergy/apps/ssc/matrix/fchunking	argo.cis.temple.edu	70	+
+0makefile	0/synergy/apps/ssc/matrix/makefile	argo.cis.temple.edu	70	+
+0makefile.std	0/synergy/apps/ssc/matrix/makefile.std	argo.cis.temple.edu	70	+
+0matrix.c	0/synergy/apps/ssc/matrix/matrix.c	argo.cis.temple.edu	70	+
+0matrix.csl	0/synergy/apps/ssc/matrix/matrix.csl	argo.cis.temple.edu	70	+
+0matrix.h	0/synergy/apps/ssc/matrix/matrix.h	argo.cis.temple.edu	70	+
+0matrix.seq.time	0/synergy/apps/ssc/matrix/matrix.seq.time	argo.cis.temple.edu	70	+
+0mtclnt.c	0/synergy/apps/ssc/matrix/mtclnt.c	argo.cis.temple.edu	70	+
+0mtclnt.c.chunk	0/synergy/apps/ssc/matrix/mtclnt.c.chunk	argo.cis.temple.edu	70	+
+0mtclnt.c.factor	0/synergy/apps/ssc/matrix/mtclnt.c.factor	argo.cis.temple.edu	70	+
+0mtclnt.x.c	0/synergy/apps/ssc/matrix/mtclnt.x.c	argo.cis.temple.edu	70	+
+0mtwrk.c	0/synergy/apps/ssc/matrix/mtwrk.c	argo.cis.temple.edu	70	+
+0mtwrk.x.c	0/synergy/apps/ssc/matrix/mtwrk.x.c	argo.cis.temple.edu	70	+

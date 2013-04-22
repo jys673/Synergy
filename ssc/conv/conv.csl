@@ -1,0 +1,14 @@
+/* This is a distributed parallel matrix multiplication Demo system */
+configuration: matrix;
+
+m: master = convlnt
+	(factor = 1  /* Tester size */
+	threshold = 1
+        )
+   -> f: ASCII 
+        (type = TS)
+   -> m: worker = convwrk 
+	( type = slave)
+   -> f: XDR 
+	(type = TS)
+   -> m: master;  

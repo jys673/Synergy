@@ -1,0 +1,14 @@
+0README	0/gopher/synergy/apps/nssc/knapsack/README	argo.cis.temple.edu	70	+
+0bfs-hcr.parallel	0/gopher/synergy/apps/nssc/knapsack/bfs-hcr.parallel	argo.cis.temple.edu	70	+
+0bfs-hcr.seed	0/gopher/synergy/apps/nssc/knapsack/bfs-hcr.seed	argo.cis.temple.edu	70	+
+0bfs-hcr.seq	0/gopher/synergy/apps/nssc/knapsack/bfs-hcr.seq	argo.cis.temple.edu	70	+
+0bfs-hcr2.parallel	0/gopher/synergy/apps/nssc/knapsack/bfs-hcr2.parallel	argo.cis.temple.edu	70	+
+0bfs-master.c	0/gopher/synergy/apps/nssc/knapsack/bfs-master.c	argo.cis.temple.edu	70	+
+0bfs-seq.c	0/gopher/synergy/apps/nssc/knapsack/bfs-seq.c	argo.cis.temple.edu	70	+
+0bfs-ucr.seq	0/gopher/synergy/apps/nssc/knapsack/bfs-ucr.seq	argo.cis.temple.edu	70	+
+0bfs-worker.c	0/gopher/synergy/apps/nssc/knapsack/bfs-worker.c	argo.cis.temple.edu	70	+
+0bfs.csl	0/gopher/synergy/apps/nssc/knapsack/bfs.csl	argo.cis.temple.edu	70	+
+0bfs.h	0/gopher/synergy/apps/nssc/knapsack/bfs.h	argo.cis.temple.edu	70	+
+0makefile	0/gopher/synergy/apps/nssc/knapsack/makefile	argo.cis.temple.edu	70	+
+0makefile.std	0/gopher/synergy/apps/nssc/knapsack/makefile.std	argo.cis.temple.edu	70	+
+0seq-bfs-good.c	0/gopher/synergy/apps/nssc/knapsack/seq-bfs-good.c	argo.cis.temple.edu	70	+

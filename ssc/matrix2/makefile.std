@@ -1,0 +1,27 @@
+CFLAGS = -O
+OBJS =-L$(SNG_PATH)/obj -lsng 
+
+all: nxdr matrix copy
+
+nxdr :  mtclnt1 mtwrkr1 
+
+mtclnt1 : mtclnt.c
+	cc $(CFLAGS) -o mtclnt mtclnt.c $(OBJS)
+
+mtwrkr1 : mtwrk.c
+	cc $(CFLAGS) -o mtwrk mtwrk.c $(OBJS)
+
+xdr :  mtclnt2 mtwrkr2 
+
+mtclnt2 : mtclnt.x.c
+	cc $(CFLAGS) -o mtclnt mtclnt.x.c $(OBJS)
+
+mtwrkr2 : mtwrk.x.c
+	cc $(CFLAGS) -o mtwrk mtwrk.x.c $(OBJS)
+
+matrix : matrix.c 
+	cc $(CFLAGS) -o matrix matrix.c $(OBJS) 
+
+copy : mtclnt mtwrk
+	cp mtclnt $(HOME)/bin
+	cp mtwrk $(HOME)/bin

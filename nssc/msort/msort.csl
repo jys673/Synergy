@@ -1,0 +1,67 @@
+CONFIGURATION: msort;
+C_DEBUG = 0 ;
+R_DEBUG = 0 ;
+
+/* split the input file into four parts (subgraph 1 of fig. 4.1) */
+F: infile=sort.dat  
+          ->
+	M: split
+               (  
+                 EXEC_LOC = neptune::/xdisk2/faculty/shi/syn94/apps/ssc/msort
+               ) ->         
+	F: out1 (TYPE= PIPE), out2 (TYPE= PIPE),
+		   out3 (TYPE= PIPE), out4 (TYPE= PIPE);
+
+/* sort part 1 (subgraph 2 of fig. 4.1) */
+F: out1 ->
+	M: sort1=sort 
+	       ( 
+                 EXEC_LOC = neptune::/xdisk2/faculty/shi/syn94/apps/ssc/msort
+               )  ->
+	F: in1 (TYPE= PIPE);
+
+/* sort part 2 (subgraph 3 of fig. 4.1) */
+F: out2 ->
+	M: sort2=sort 
+               ( 
+                 EXEC_LOC =neptune::/xdisk2/faculty/shi/syn94/apps/ssc/msort
+               )  -> 
+	F: in2 (TYPE= PIPE);
+
+/* sort part 3 (subgraph 4 of fig. 4.1) */
+F: out3 ->
+	M: sort3=sort 
+	       ( 
+                 EXEC_LOC = neptune::/xdisk2/faculty/shi/syn94/apps/ssc/msort
+               )  ->
+	F: in3 (TYPE= PIPE);
+
+/* sort part 4 (subgraph 5 of fig. 4.1) */
+F: out4 ->
+	M: sort4=sort 
+	       ( 
+                 EXEC_LOC = neptune::/xdisk2/faculty/shi/syn94/apps/ssc/msort
+               )  ->
+	F: in4 (TYPE= PIPE);
+
+/* merge the four parts into the output file (subgraph 6 of fig. 4.1) */
+F: in1 (TYPE= PIPE), in2 (TYPE= PIPE),
+   in3 (TYPE= PIPE), in4 (TYPE= PIPE) ->
+	M: merge=merge 
+	       (
+                 EXEC_LOC =neptune::/xdisk2/faculty/shi/syn94/apps/ssc/msort
+               )  ->
+	F: out=sorted.dat;
+
+/* synonimize the 4 outputs of split with the inputs of the 4 sort processes */
+S: out1, sort1.in, split.sort1;  
+S: out2, sort2.in, split.sort2; 
+S: out3, sort3.in, split.sort3;
+S: out4, sort4.in, split.sort4;
+
+/* synonimize outputs of the 4 sort processes with the 4 inputs of merge */
+S: sort1.out, in1;
+S: sort2.out, in2;
+S: sort3.out, in3;
+S: sort4.out, in4;
+

@@ -1,0 +1,47 @@
+matrix
+%
+worker1
+127.0.0.1 /home/sgeadmin/SYNERGY/synergy/apps2/ssc/matrix/mtwrk sgeadmin
+127.0.0.1 */mtwrk sgeadmin
+prot = tcp 
+f = 500
+p = 2
+t = 1
+d = 0
+!
+t * problem problem
+t * result result
+:
+%
+master
+127.0.0.1 /home/sgeadmin/SYNERGY/synergy/apps2/ssc/matrix/mtclnt sgeadmin
+127.0.0.1 */mtclnt sgeadmin
+prot = tcp 
+f = 500
+p = 2
+t = 1
+d = 0
+!
+t * result result
+t * problem problem
+:
+%
+worker
+127.0.0.1 /home/sgeadmin/SYNERGY/synergy/apps2/ssc/matrix/mtwrk sgeadmin
+127.0.0.1 */mtwrk sgeadmin
+prot = tcp 
+f = 500
+p = 2
+t = 1
+d = 0
+!
+t * problem problem
+t * result result
+:
+@
+t problem 127.0.0.1 sgeadmin
+t result 127.0.0.1 sgeadmin
+-
+master:
+worker:
+:

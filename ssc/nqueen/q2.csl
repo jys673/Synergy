@@ -1,0 +1,73 @@
+configuration:	queen;
+R_DEBUG = 3;	/*if need to debug, set R_DEBUG=1 */
+/* This is a distributed parallel queen problem system */
+
+m: master = qcl
+	(EXEC_LOC =snowhite::/usr/users/shi/yshi)
+  -> f: work_ts
+ 	(type = TS EXEC_LOC = snowhite::/u)
+  -> m: worker1 = qw
+	(EXEC_LOC =snowhite::/usr/users/shi/yshi),
+   	worker2 = qw
+	(EXEC_LOC =sleepy.cis.temple.edu::/usr/users/shi/yshi),
+   	worker3 = qw
+	(EXEC_LOC =dopey.cis.temple.edu::/usr/users/shi/yshi),
+   	worker4 = qw
+	(EXEC_LOC =sneezy.cis.temple.edu::/usr/users/shi/yshi),
+   	worker5 = qw
+	(EXEC_LOC =happy.cis.temple.edu::/usr/users/shi/yshi),
+   	worker6 = qw
+	(EXEC_LOC =bashful.cis.temple.edu::/usr/users/shi/yshi),
+   	worker7 = qw
+	(EXEC_LOC =grumpy.cis.temple.edu::/usr/users/shi/yshi),
+   	worker8 = qw
+	(EXEC_LOC =doc.cis.temple.edu::/usr/users/shi/yshi),
+   	worker9 = qw
+	(EXEC_LOC =dwarfs.cis.temple.edu::/usr/users/shi/yshi),
+   	worker10 = qw
+	(EXEC_LOC =redapple.cis.temple.edu::/usr/users/shi/yshi),
+   	worker11 = qw
+	(EXEC_LOC =huntsman.cis.temple.edu::/usr/users/shi/yshi),
+   	worker12 = qw
+	(EXEC_LOC =charming.cis.temple.edu::/usr/users/shi/yshi),
+   	worker13 = qw
+	(EXEC_LOC =cottage.cis.temple.edu::/usr/users/shi/yshi),
+   	worker14 = qw
+	(EXEC_LOC =thequeen.cis.temple.edu::/usr/users/shi/yshi),
+   	worker15 = qw
+	(EXEC_LOC =diamonds.cis.temple.edu::/usr/users/shi/yshi),
+   	worker16 = qw
+	(EXEC_LOC =witch.cis.temple.edu::/usr/users/shi/yshi),
+   	worker17 = qw
+	(EXEC_LOC =castle.cis.temple.edu::/usr/users/shi/yshi),
+   	worker18 = qw
+	(EXEC_LOC =mickey.cis.temple.edu::/usr/users/shi/yshi),
+   	worker19 = qw
+	(EXEC_LOC =goofy.cis.temple.edu::/usr/users/shi/yshi),
+   	worker20 = qw
+	(EXEC_LOC =donald.cis.temple.edu::/usr/users/shi/yshi),
+   	worker21 = qw
+	(EXEC_LOC =minnie.cis.temple.edu::/usr/users/shi/yshi),
+   	worker22 = qw
+	(EXEC_LOC =pluto.cis.temple.edu::/usr/users/shi/yshi),
+   	worker23 = qw
+	(EXEC_LOC =huey.cis.temple.edu::/usr/users/shi/yshi),
+   	worker24 = qw
+	(EXEC_LOC =dewey.cis.temple.edu::/usr/users/shi/yshi),
+   	worker25 = qw
+	(EXEC_LOC =louie.cis.temple.edu::/usr/users/shi/yshi),
+   	worker26 = qw
+	(EXEC_LOC =scrooge.cis.temple.edu::/usr/users/shi/yshi),
+   	worker27 = qw
+	(EXEC_LOC =peterpan.cis.temple.edu::/usr/users/shi/yshi),
+   	worker28 = qw
+	(EXEC_LOC =tinkrbel.cis.temple.edu::/usr/users/shi/yshi),
+   	worker29 = qw
+	(EXEC_LOC =capthook.cis.temple.edu::/usr/users/shi/yshi),
+   	worker30 = qw
+	(EXEC_LOC =lostboys.cis.temple.edu::/usr/users/shi/yshi),
+   	worker31 = qw
+	(EXEC_LOC =nevrland.cis.temple.edu::/usr/users/shi/yshi)
+  -> f: out_ts
+	(type = TS EXEC_LOC = snowhite::/u)
+  -> m: master;

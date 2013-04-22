@@ -1,0 +1,2 @@
+cp mtclnt.c.factor mtclnt.c
+echo "Please use the <factor = X> clause in matrix.csl to change factoring %."
